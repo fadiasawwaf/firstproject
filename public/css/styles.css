@@ -1,0 +1,341 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: #fbfbfb ;
+    overflow-x: hidden;
+}
+
+html{
+    scroll-behavior: smooth ;
+}
+
+video{
+    position: absolute;
+    content: "";
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.overlay{
+    position: absolute;
+    content: "";
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+header{
+    width: 100%;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+}
+
+header .logo{
+    color: #fbfbfb;
+    text-decoration: none;
+    font-size: 32px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+header .logo:hover{
+    transform: scale(1.2);
+}
+
+header .logo span{
+    color: dodgerblue;
+}
+
+header nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: 60px;
+}
+
+header nav ul li a{
+   color: #fbfbfb;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+header nav ul li{
+    position: relative;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+header nav ul li::before{
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 100%;
+    background: dodgerblue ;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+header nav ul li:hover::before{
+    width: 100%;
+    transition: width 0.3s;
+}
+
+header i{
+    font-size: 32px;
+    color: dodgerblue;
+    cursor: pointer;
+   display: none !important;
+}
+
+section{
+    width: 100%;
+    min-height: calc(100% - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+}
+
+section .jywn{
+    width: 640px;
+    text-align: center;
+    font-size: 24px;
+    color: #f1f1f1;
+}
+
+section i{
+    font-size: 32px;
+    color: #f1f1f1;
+    margin-top: 120px;
+    cursor: pointer;
+    transition: 0,3s ease-in-out;
+    animation: slidein infinite 0.3s;
+}
+
+section i:hover{
+    transform: scale(1,3);
+}
+
+section .contactcontainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+section .contactcontainer input, 
+section .contactcontainer textarea{
+    width: 60%;
+    padding: 15px 20px;
+    outline: none;
+    font-size: 16px;
+    color: #515151;
+    letter-spacing: 1.5px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+section .contactcontainer button{
+    width: 40%;
+    outline: none;
+    border: none;
+    padding: 15PX 25PX;
+    border-radius: 6PX;
+    background: #008cff;
+    color: #515151;
+    font-size: 18PX;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@keyframes slidein{
+    0%{
+        opacity: .3;
+    }
+    50%{
+        opacity: .5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+section img{
+    width: 450px;
+}
+
+section .content{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+section .sectiontitle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section .sectiontitle h1{
+    font-size: 48px;
+    color: #515151;
+}
+
+section .sectiontitle div{
+    width: 40px;
+    height: 4px;
+    border-radius: 6px;
+    background: dodgerblue;
+}
+
+section .content .contentsection{
+    width: 420px;
+    display: flex;
+    flex-direction: flex-start;
+    gap: 12px;
+}
+
+section .content .contentsection h1{
+    font-size: 28px;
+    color: #515151;
+}
+
+section .content .contentsection p{
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    color: #616161;
+    text-align: left;
+}
+
+section .content .contentsection a{
+    padding: 15px 25px;
+    border-radius: 6px;
+    background: #008cff;
+    color: #fbfbfb;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+section .content .imgbox{
+    width: 3000px;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+section .content .imgbox img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+section .content .imgbox::before{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: #010633b2;
+    top: -20px;
+    right: -20px;
+    border-radius: 6px;
+    z-index: -1;
+}
+
+.projectcontainer{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.projectcontainer .imgcontainer{
+    width: 280px;
+    height: 160px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.projectcontainer.imgcontainer img{
+    width: 1005;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s ease-in-out;
+}
+
+.projectcontainer .imgcontainer img:hover{
+    transform: scale(1.2);
+}
+
+@media screen and (max-width:500px){
+    header nav{
+        position: fixed;
+        top: 60px;
+        right: -200%;
+        width: 60%;
+        height: 100%;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(10);
+        z-index: 101;
+        transition: right  0.3s ease-in-out;
+    }
+
+    header nav.show{
+        right: 0%;
+    }
+
+    header nav ul{
+        margin-top: 52px;
+        flex-direction: column;
+    }
+    header i{
+        display: block !important;
+    }
+
+    section .jywn{
+        width: 100%;
+    }
+
+   section .content{
+    flex-direction: column;
+    gap: 36PX;
+    }
+
+    section .content .contentsection{
+        align-items: center;
+        justify-content: center;
+    }
+}
